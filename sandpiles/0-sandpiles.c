@@ -26,6 +26,7 @@ int is_stable(int grid[3][3])
 void grid_toppler(int grid[3][3])
 {
   int i, j;
+  int temp_grid[3][3] = {0};
 
   for (i = 0; i < 3; i++)
   {
@@ -33,17 +34,22 @@ void grid_toppler(int grid[3][3])
     {
       if (grid[i][j] > 3)
       {
-        grid[i][j] -= 4;
+        temp_grid[i][j] -= 4;
         if (i + 1 < 3)
-					grid[i + 1][j]++;
+					temp_grid[i + 1][j]++;
 				if (i - 1 >= 0)
-					grid[i - 1][j]++;
+					temp_grid[i - 1][j]++;
 				if (j + 1 < 3)
-					grid[i][j + 1]++;
+					temp_grid[i][j + 1]++;
 				if (j - 1 >= 0)
-					grid[i][j - 1]++;
+					temp_grid[i][j - 1]++;
       }
     }
+  }
+  for (i = 0; i < 3; i++)
+  {
+    for (j = 0; j < 3; j++)
+      grid[i][j] += temp_grid[i][j];
   }
 }
 
