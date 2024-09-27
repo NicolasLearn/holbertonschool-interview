@@ -60,7 +60,7 @@ int main(int ac, char **av)
         printf("Slide to the right\n");
         break;
     default:
-        fprintf(stderr, "Unknown direction '%c'. Please use 'L' or 'R'", *(av[1]));
+        fprintf(stderr, "Unknown direction '%c'. Please use 'L' or 'R'\n", *(av[1]));
         return (EXIT_FAILURE);
     }
 
