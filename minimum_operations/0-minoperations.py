@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """ Minimum Operations module """
 
+
 def minOperations(n):
     """Calculates the minimum operations to achieve 'n' characters."""
 
